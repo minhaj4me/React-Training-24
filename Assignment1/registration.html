@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="login-container">
+            <div class="image-section">
+                <img src="../unsplash.jpg" alt="Image">
+            </div>
+            <div class="form-section">
+
+                <div class="logo">
+
+                    <h1><img src="star.svg" alt=""> MiDer</h1>
+                    <p>Sign up your account</p>
+                </div>
+
+                <form action="#" method="post">
+                    <div class="form-item">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    <div class="item">
+                        <label>Gender :</label>
+                        <div><input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female">Female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="other" name="gender" value="other" required>
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <label>Hobbies :</label>
+                        <div> <input type="checkbox" id="reading" name="hobbies" value="reading">
+                            <label for="reading">Reading</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+                            <label for="traveling">Traveling</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="cooking" name="hobbies" value="cooking">
+                            <label for="cooking">Cooking</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="otherHobby" name="hobbies" value="other">
+                            <label for="otherHobby">Other</label>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="profilePicture">Profile Picture</label>
+                        <input type="file" id="profilePicture" name="profilePicture">
+                    </div>
+                    <div class="form-item">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="" hidden>Select your country </option>
+                            <option value="usa">United States</option>
+                            <option value="canada">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="australia">Australia</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" rows="2" cols="60"></textarea>
+                    </div>
+                    <div class="agreement-item">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">I agree to the Terms and Conditions</label>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="reset" type="reset">Reset</button>
+                        <button class="submit" type="submit">Submit</button>
+                    </div>
+
+                    <p>Have an account? <a href="login.html">Login here</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
