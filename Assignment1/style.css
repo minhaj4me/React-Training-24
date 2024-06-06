@@ -94,7 +94,6 @@ textarea:focus {
 .form-buttons {
     display: flex;
     gap: 10px;
-    justify-content: center;
     margin-top: 20px;
 }
 
@@ -106,7 +105,7 @@ button {
     color: white;
     font-weight: 800;
     cursor: pointer;
-    flex: 1;
+    width: 30%;
 }
 
 .submit:hover {
