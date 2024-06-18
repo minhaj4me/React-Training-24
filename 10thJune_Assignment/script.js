@@ -4,7 +4,7 @@ const hob = document.querySelectorAll('input[name="hobbies"]')
 
 const form = document.querySelector('form')
 form.addEventListener("submit", function arrowFunc(event) {
-    event.preventDefault(); //to stop the default behviour of submit button or to stop the page from reloading
+    event.preventDefault(); //to stop the default behaviour of submit button or to stop the page from reloading
 
     //(other fields)
 
