@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 
+{
+  text-align: center;
+  margin-bottom: 24px;
+}
+button{
+  padding: 8px 16px;
+  margin-inline:12px;
+}
+
+button.inc{
+  background-color: #04aa6d;
+  color: white;
+  font-size: 32px;
+}
+button.dec{
+  background-color: rgb(236, 116, 72);
+  color: white;
+  font-size: 32px;
+}
