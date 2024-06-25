@@ -107,7 +107,6 @@ const SignUpForm = () => {
                                 backgroundPosition: { xs: 'top', md: 'center' },
                                 marginBottom: { xs: '2rem', md: 0 },
                                 minHeight: '300px',
-                                maxHeight: '100%',
                             }}
                         />
                     </Grid>
