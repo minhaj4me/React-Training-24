@@ -16,9 +16,7 @@ import {
     Select,
     InputLabel,
     Grid,
-    useMediaQuery,
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SignInSide from './SignInSide';
 
@@ -39,16 +37,13 @@ const SignUpForm = () => {
         agree: false,
     });
 
-    // getting value in console
+    // showing value in console
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-
         if (type === 'checkbox') {
             setFormData({ ...formData, [name]: checked });
             if (name === 'hobbies') {
-                const newHobbies = checked
-                    ? [...formData.hobbies, value]
-                    : [];
+                const newHobbies = checked ? [...formData.hobbies, value] : [];
                 setFormData({ ...formData, hobbies: newHobbies });
             }
         } else if (type === 'file') {
@@ -64,11 +59,6 @@ const SignUpForm = () => {
         console.log(formData);
     };
 
-    // for fontFamily
-    const theme = useTheme();
-    // mediaQuery
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     // for switching between components
     const [showSignIn, setShowSignIn] = useState(false);
 
@@ -80,6 +70,7 @@ const SignUpForm = () => {
         return <SignInSide />;
     }
 
+    //for Font Family
     const theme3 = createTheme({
         typography: {
             allVariants: {
@@ -87,17 +78,18 @@ const SignUpForm = () => {
             }
         }
     });
+
+    //for Font Family
     const theme4 = createTheme({
         typography: {
             fontFamily: "Playwrite ES"
         }
     });
-
     return (
         <ThemeProvider theme={theme3}>
             <Box maxWidth="100%" >
                 <Grid container spacing={2}>
-                    <Grid item xs={12} sm={5} md={4} >
+                    <Grid item xs={12} sm={5} md={4}>
                         <Box
                             sx={{
                                 height: '100%',
@@ -109,6 +101,7 @@ const SignUpForm = () => {
                             }}
                         />
                     </Grid>
+
 
 
                     <Grid item xs={12} sm={7} md={8}>
@@ -125,7 +118,7 @@ const SignUpForm = () => {
                                 backgroundColor: '#fff',
                             }}
                         >
-                            <Box sx={{ display: 'flex', mb: 3 }}>
+                            <Box sx={{ mb: 3 }}>
                                 <Typography variant="h4" component="h1">
                                     <img src="star.svg" alt="Logo" style={{ marginRight: 2, marginBottom: 2, width: '32px', verticalAlign: "middle" }} />
                                     MiDer
@@ -236,8 +229,8 @@ const SignUpForm = () => {
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={12} md={6}>
-                                        <FormControl component="fieldset" required>
-                                            <FormLabel component="legend">Gender</FormLabel>
+                                        <FormControl required>
+                                            <FormLabel>Gender</FormLabel>
                                             <RadioGroup
                                                 name="gender"
                                                 value={formData.gender}
@@ -251,8 +244,8 @@ const SignUpForm = () => {
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <FormControl component="fieldset">
-                                            <FormLabel component="legend">Hobbies</FormLabel>
+                                        <FormControl>
+                                            <FormLabel>Hobbies</FormLabel>
                                             <FormGroup row>
                                                 <FormControlLabel
                                                     control={
@@ -323,6 +316,8 @@ const SignUpForm = () => {
                                             multiline
                                             rows={4}
                                             fullWidth
+                                            InputLabelProps={{ shrink: true }}
+                                            placeholder="Write something..."
                                         />
                                     </Grid>
                                     <Grid item xs={12}>
@@ -340,10 +335,10 @@ const SignUpForm = () => {
                                     </Grid>
                                 </Grid>
                                 <Box sx={{ display: 'flex', mt: 1 }}>
-                                    <Button variant="outlined" type="reset">
+                                    <Button variant="outlined" color="error" type="reset">
                                         Reset
                                     </Button>
-                                    <Button variant="contained" type="submit" sx={{ ml: 2 }}>
+                                    <Button variant="contained" color="success" type="submit" sx={{ ml: 2 }}>
                                         Submit
                                     </Button>
                                 </Box>
