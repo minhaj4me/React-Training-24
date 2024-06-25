@@ -220,7 +220,7 @@ const SignUpForm = () => {
                                     </Grid>
                                     <Grid item xs={12} md={6}>
                                         <FormControl fullWidth required>
-                                            <InputLabel id="country-label">Country</InputLabel>
+                                            <InputLabel id="country-label">Select your Country</InputLabel>
                                             <Select
                                                 labelId="country-label"
                                                 id="country"
@@ -228,9 +228,6 @@ const SignUpForm = () => {
                                                 value={formData.country}
                                                 onChange={handleChange}
                                             >
-                                                <MenuItem value="" disabled>
-                                                    Select your country
-                                                </MenuItem>
                                                 <MenuItem value="usa">United States</MenuItem>
                                                 <MenuItem value="canada">Canada</MenuItem>
                                                 <MenuItem value="uk">United Kingdom</MenuItem>
