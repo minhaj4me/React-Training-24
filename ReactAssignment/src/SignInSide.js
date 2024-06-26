@@ -12,11 +12,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const SignInSide = () => {
   const [showSignUp, setShowSignUp] = useState(false);
-
   const handleSignUpClick = () => {
     setShowSignUp(true);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -25,27 +23,22 @@ const SignInSide = () => {
       password: data.get('password'),
     });
   };
-
   if (showSignUp) {
     return <SignUpSide />;
   }
-
   const theme1 = createTheme({
     typography: {
       fontFamily: 'Ubuntu',
     },
   });
-
   const theme2 = createTheme({
     typography: {
       fontFamily: 'Playwrite ES',
     },
   });
-
   return (
     <ThemeProvider theme={theme1}>
       <Grid
-
         container
         component="main"
         sx={{
@@ -90,7 +83,6 @@ const SignInSide = () => {
             <ThemeProvider theme={theme2}>
               <Box
                 component="form"
-                noValidate
                 onSubmit={handleSubmit}
                 sx={{
                   mt: 1,
@@ -101,6 +93,7 @@ const SignInSide = () => {
                   margin="normal"
                   required
                   fullWidth
+                  type="email"
                   id="email"
                   label="Email Address"
                   name="email"
@@ -116,7 +109,7 @@ const SignInSide = () => {
                   id="password"
                 />
                 <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
+                  control={<Checkbox value="remember" color="primary" required />}
                   label="Remember me"
                 />
                 <Button
