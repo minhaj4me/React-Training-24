@@ -19,7 +19,6 @@ import {
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SignInSide from './SignInSide';
-
 const SignUpForm = () => {
     const [formData, setFormData] = useState({
         fullName: '',
@@ -36,7 +35,6 @@ const SignUpForm = () => {
         bio: '',
         agree: false,
     });
-
     // showing value in console
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -52,24 +50,18 @@ const SignUpForm = () => {
             setFormData({ ...formData, [name]: value });
         }
     };
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
     };
-
     // for switching between components
     const [showSignIn, setShowSignIn] = useState(false);
-
     const handleSignInClick = () => {
         setShowSignIn(true);
     };
-
     if (showSignIn) {
         return <SignInSide />;
     }
-
     //for Font Family
     const theme3 = createTheme({
         typography: {
@@ -78,7 +70,6 @@ const SignUpForm = () => {
             }
         }
     });
-
     //for Font Family
     const theme4 = createTheme({
         typography: {
@@ -101,9 +92,6 @@ const SignUpForm = () => {
                             }}
                         />
                     </Grid>
-
-
-
                     <Grid item xs={12} sm={7} md={8}>
                         <Box
                             component="form"
@@ -305,7 +293,6 @@ const SignUpForm = () => {
                                             fullWidth
                                         />
                                     </Grid>
-
                                     <Grid item xs={12}>
                                         <TextField
                                             label="Bio"
@@ -353,5 +340,4 @@ const SignUpForm = () => {
         </ThemeProvider>
     );
 };
-
 export default SignUpForm;
