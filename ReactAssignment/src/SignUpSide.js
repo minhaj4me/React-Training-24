@@ -19,7 +19,7 @@ import {
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SignInSide from './SignInSide';
-const SignUpForm = () => {
+const SignUpSide = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         username: '',
@@ -340,4 +340,4 @@ const SignUpForm = () => {
         </ThemeProvider>
     );
 };
-export default SignUpForm;
+export default SignUpSide;
