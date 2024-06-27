@@ -19,11 +19,10 @@ import {
 } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SignInSide from './SignInSide';
-<<<<<<< HEAD
-const SignUpForm = () => {
-=======
-const SignUpSide = () => {
->>>>>>> 69d4182768222311015ab94f08de996229cbe6d9
+// { countries } is a props coming from AxiosCountry
+const TestSignUpForm = ({ countries }) => {
+    //hobbiesArray
+    const hobbiesArray = ['Reading', 'Writing', 'Eating', 'Playing']
     const [formData, setFormData] = useState({
         fullName: '',
         username: '',
@@ -45,7 +44,7 @@ const SignUpSide = () => {
         if (type === 'checkbox') {
             setFormData({ ...formData, [name]: checked });
             if (name === 'hobbies') {
-                const newHobbies = checked ? [...formData.hobbies, value] : [];
+                const newHobbies = checked ? [...formData.hobbies, value] : formData.hobbies.filter(hobby => hobby !== value);
                 setFormData({ ...formData, hobbies: newHobbies });
             }
         } else if (type === 'file') {
@@ -212,11 +211,11 @@ const SignUpSide = () => {
                                                 value={formData.country}
                                                 onChange={handleChange}
                                             >
-                                                <MenuItem value="usa">United States</MenuItem>
-                                                <MenuItem value="canada">Canada</MenuItem>
-                                                <MenuItem value="uk">United Kingdom</MenuItem>
-                                                <MenuItem value="australia">Australia</MenuItem>
-                                                <MenuItem value="other">Other</MenuItem>
+                                                {/*allCountry */}
+                                                {/* countries is a props coming from AxiosCountry Component*/}
+                                                {countries.map((country, index) => (
+                                                    <MenuItem key={index} value={country}>{country}</MenuItem>
+                                                ))}
                                             </Select>
                                         </FormControl>
                                     </Grid>
@@ -239,50 +238,21 @@ const SignUpSide = () => {
                                         <FormControl>
                                             <FormLabel>Hobbies</FormLabel>
                                             <FormGroup row>
-                                                <FormControlLabel
-                                                    control={
-                                                        <Checkbox
-                                                            name="hobbies"
-                                                            value="reading"
-                                                            checked={formData.hobbies.includes('reading')}
-                                                            onChange={handleChange}
-                                                        />
-                                                    }
-                                                    label="Reading"
-                                                />
-                                                <FormControlLabel
-                                                    control={
-                                                        <Checkbox
-                                                            name="hobbies"
-                                                            value="traveling"
-                                                            checked={formData.hobbies.includes('traveling')}
-                                                            onChange={handleChange}
-                                                        />
-                                                    }
-                                                    label="Traveling"
-                                                />
-                                                <FormControlLabel
-                                                    control={
-                                                        <Checkbox
-                                                            name="hobbies"
-                                                            value="cooking"
-                                                            checked={formData.hobbies.includes('cooking')}
-                                                            onChange={handleChange}
-                                                        />
-                                                    }
-                                                    label="Cooking"
-                                                />
-                                                <FormControlLabel
-                                                    control={
-                                                        <Checkbox
-                                                            name="hobbies"
-                                                            value="other"
-                                                            checked={formData.hobbies.includes('other')}
-                                                            onChange={handleChange}
-                                                        />
-                                                    }
-                                                    label="Other"
-                                                />
+                                                {/* hobbies getting dynamically */}
+                                                {hobbiesArray.map((hobby, index) => (
+                                                    <FormControlLabel
+                                                        control={
+                                                            <Checkbox
+                                                                name="hobbies"
+                                                                value={hobby}
+                                                                checked={formData.hobbies.includes(hobby)}
+                                                                onChange={handleChange}
+                                                            />
+                                                        }
+                                                        key={index}
+                                                        label={hobby}
+                                                    />
+                                                ))}
                                             </FormGroup>
                                         </FormControl>
                                     </Grid>
@@ -297,6 +267,7 @@ const SignUpSide = () => {
                                             fullWidth
                                         />
                                     </Grid>
+
                                     <Grid item xs={12}>
                                         <TextField
                                             label="Bio"
@@ -341,11 +312,7 @@ const SignUpSide = () => {
                     </Grid>
                 </Grid>
             </Box>
-        </ThemeProvider>
+        </ThemeProvider >
     );
 };
-<<<<<<< HEAD
-export default SignUpForm;
-=======
-export default SignUpSide;
->>>>>>> 69d4182768222311015ab94f08de996229cbe6d9
+export default TestSignUpForm;
