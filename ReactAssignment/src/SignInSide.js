@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import SignUpSide from './SignUpSide';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import AxiosCountry from './AxiosCountry';
 
 const SignInSide = () => {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -24,7 +25,7 @@ const SignInSide = () => {
     });
   };
   if (showSignUp) {
-    return <SignUpSide />;
+    return <AxiosCountry />;
   }
   const theme1 = createTheme({
     typography: {

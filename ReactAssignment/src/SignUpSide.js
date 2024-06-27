@@ -293,7 +293,6 @@ const SignUpForm = () => {
                                             fullWidth
                                         />
                                     </Grid>
-
                                     <Grid item xs={12}>
                                         <TextField
                                             label="Bio"
