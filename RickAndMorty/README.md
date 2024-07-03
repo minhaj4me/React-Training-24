@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Rick_Morty_App
+
+### Screenshot 1
+![Screenshot 1](images/Sc1.png)
+
+### Screenshot 2
+![Screenshot 2](images/Sc2.png)
+
+### Screenshot 3
+![Screenshot 3](images/Sc3.png)
+
+### Screenshot 4
+![Screenshot 4](images/Sc4.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
